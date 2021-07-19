@@ -1,9 +1,10 @@
 body
 {
+
     margin:0;
     padding: 0;
     font-family: sans-serif;
-
+    background-size: cover;
 }
 .all{
     position: absolute;
@@ -26,9 +27,11 @@ body
     left: 50%;
     transform: translate(-50%,-50%);
     width:400px;
+    height: 310px;
     padding: 40px;
-    /*background: rgba(255,255,255,0.08);*/
     box-sizing : border-box;
+    /*background: rgba(255,255,255,0.08);*/
+
     /*box-shadow: 0 15px 25px rgba(0,0,0,0.5);*/
     /*border-radius: 10px;*/
 }
@@ -92,6 +95,7 @@ body
     outline: none;
     background: transparent;
 }
+
 .signin .inputBox label
 {
     position: absolute;
@@ -103,6 +107,10 @@ body
     color: #fff;
     pointer-events: none;
     transition: .5s;
+}
+.sp{
+    width: 100px;
+    height: 40px;
 }
 .signin .inputBox input:focus ~ label,
 .signin .inputBox input:valid ~ label
@@ -133,9 +141,11 @@ body
     left: 50%;
     transform: translate(-50%,-50%);
     width:400px;
+    height: 310px;
     padding: 40px;
-    /*background: rgba(255,255,255,0.08);*/
     box-sizing : border-box;
+    /*background: rgba(255,255,255,0.08);*/
+
     /*box-shadow: 0 15px 25px rgba(0,0,0,0.5);*/
     /*border-radius: 10px;*/
 }
@@ -201,4 +211,13 @@ body
     padding: 10px 20px;
     cursor:pointer;
     border-radius: 5px;
+}
+input
+{
+    margin: 0px;
+}
+p
+{
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
