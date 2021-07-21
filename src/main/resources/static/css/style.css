@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?7cop6x');
+  src:  url('fonts/icomoon.eot?7cop6x#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7cop6x') format('truetype'),
+    url('fonts/icomoon.woff?7cop6x') format('woff'),
+    url('fonts/icomoon.svg?7cop6x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrest:before {
+  content: "\e913";
+}
+.icon-stack:before {
+  content: "\e90d";
+}
+.icon-spinner:before {
+  content: "\e914";
+}
+.icon-triangle-right:before {
+  content: "\e912";
+}
+.icon-emoji-happy:before {
+  content: "\e903";
+}
+.icon-keyboard:before {
+  content: "\e90f";
+}
+.icon-lock:before {
+  content: "\e911";
+}
+.icon-mobile:before {
+  content: "\e910";
+}
+.icon-sina-weibo:before {
+  content: "\e90b";
+}
+.icon-apparel:before {
+  content: "\e906";
+}
+.icon-chat-bubble-dots:before {
+  content: "\e90a";
+}
+.icon-view-tile:before {
+  content: "\e915";
+}
+.icon-book-open:before {
+  content: "\e907";
+}
+.icon-edit-3:before {
+  content: "\e90c";
+}
+.icon-eye:before {
+  content: "\e901";
+}
+.icon-eye-off:before {
+  content: "\e902";
+}
+.icon-image:before {
+  content: "\e904";
+}
+.icon-save:before {
+  content: "\e90e";
+}
+.icon-trash-2:before {
+  content: "\e908";
+}
+.icon-create_new_folder:before {
+  content: "\e2cc";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-arrow-up:before {
+  content: "\f062";
+}
+.icon-shopping-cart:before {
+  content: "\f07a";
+}
+.icon-bullseye:before {
+  content: "\f140";
+}
+.icon-play-circle:before {
+  content: "\f144";
+}
+.icon-qq:before {
+  content: "\f1d6";
+}
+.icon-wechat:before {
+  content: "\f1d7";
+}
+.icon-copyright:before {
+  content: "\f1f9";
+}
+.icon-pause-circle:before {
+  content: "\f28b";
+}
+.icon-user-circle:before {
+  content: "\f2bd";
+}
+.icon-heart:before {
+  content: "\e905";
+}
+.icon-cake:before {
+  content: "\e909";
+}
+.icon-cancel:before {
+  content: "\e900";
+}

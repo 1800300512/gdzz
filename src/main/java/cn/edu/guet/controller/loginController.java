@@ -3,16 +3,12 @@ package cn.edu.guet.controller;
 import cn.edu.guet.bean.Users;
 import cn.edu.guet.service.loginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.TransactionDefinition;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -27,9 +23,7 @@ public class loginController {
     @PostMapping("login")
     public Map<String, Boolean> login(String acount, String password, Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response){
         Users user=loginService.login(acount,session,request,response);
-        System.out.println(user);
         Map<String , Boolean> map=new HashMap<String, Boolean>();
-        System.out.println(password);
         if(user!=null&&password.equals(user.getUserpassword())){
             map.put("YON",true);
             return map;

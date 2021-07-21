@@ -41,7 +41,6 @@ $(document).ready(function(){
                password: $.md5($("input[name='password1']").val())
             },
             success: function (data) {
-               console.log(data.YON);
                if (data.YON) {
                   window.location.href = "test.html";
                } else {
@@ -82,7 +81,6 @@ $(document).ready(function(){
             dataType: "json",
             data: {password: $("input[name='password2']").val()},
             success: function (data) {
-
                if (data.YON==="true") {
                   j=0;
                   $(".sp2").replaceWith("<p class='sp2' style='color: #ff2d3b'>"+data.msg+"</p>");
@@ -117,7 +115,6 @@ $(document).ready(function(){
                password: $.md5($("input[name='password2']").val())
             },
             success: function (data) {
-               console.log(data.YON);
                if (data.YON) {
                   $(".spr").replaceWith("<p class='sp' style='color: #4bff3e'>注册成功</p>");
                } else {

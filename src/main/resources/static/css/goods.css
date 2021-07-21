@@ -1,0 +1,214 @@
+body {
+  background-color: rgba(204, 204, 204, 0.1);
+}
+main {
+  width: 1000px;
+  margin: 0 auto;
+}
+ul {
+  padding: 0px;
+}
+.wholeClassify {
+  position: relative;
+  width: 900px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px #666666;
+}
+.wholeClassify li {
+  display: block;
+}
+.wholeClassify li a {
+  display: inline-block;
+  width: 150px;
+  margin: 8px 5px;
+  text-align: center;
+}
+.handle {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+.handle:hover {
+  color: priceButtonColor;
+}
+.priceSelect {
+  float: right;
+  margin: 0px 50px 10px 0px;
+}
+.priceSelect > span {
+  font-size: 14px;
+  color: #666666;
+}
+.upPrice,
+.downPrice {
+  cursor: pointer;
+}
+.upPrice:hover,
+.downPrice:hover {
+  color: priceButtonColor;
+}
+.priceSelect a,
+button {
+  cursor: pointer;
+}
+.priceSearch {
+  padding: 2px 10px;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(rgba(255, 153, 0, 0.2) 2%, priceButtonColor);
+  outline: none;
+}
+.icon-view-tile {
+  opacity: 0.6;
+}
+.goodsShow {
+  width: 900px;
+  margin: 0 auto;
+}
+.singleShow {
+  display: inline-block;
+  position: relative;
+  margin: 10px 5px;
+  padding: 3px;
+  width: 203px;
+  border: 1px solid rgba(102, 102, 102, 0.5);
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.sellerImg {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.goodsLink {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  margin: 3px auto;
+  text-align: center;
+}
+.goodsName {
+  display: inline-block;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.goodsImg {
+  width: 95%;
+  max-height: 200px;
+}
+.goodsPrice {
+  font-size: 20px;
+  color: #ff0000;
+}
+.goodsIntroduce {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 14px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.goodsSource {
+  float: right;
+  max-width: 52%;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666666;
+}
+.goodsSource::before {
+  content: "stock��";
+}
+.singleShowRow {
+  position: relative;
+  border: 1px solid #666666;
+  height: 110px;
+  margin: 25px 0px;
+  border-radius: 5px;
+  padding: 15px;
+}
+.singleShowRow:first-child {
+  margin-top: 30px;
+}
+.singleShowRow .goodsImg {
+  text-align: center;
+  width: 25%;
+  max-height: 120px;
+}
+.singleShowRow a,
+.singleShowRow span {
+  display: inline;
+  margin-right: 10px;
+}
+.singleShowRow > img,
+.singleShowRow > p:first-child {
+  float: left;
+  text-align: left;
+}
+.singleShowRow > p {
+  margin-left: 25%;
+}
+.singleShowRow .goodsName {
+  display: inline-block;
+  width: 650px;
+  text-align: left;
+}
+.singleShowRow .goodsIntroduce {
+  width: 650px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sellerInfor {
+  position: absolute;
+  top: -14%;
+  left: -2%;
+  height: 27px;
+  border-radius: 10px;
+  background-color: rgba(204, 204, 204, 0.6);
+}
+.sellerInfor > * {
+  float: left;
+}
+/* 页面跳转样式 */
+.pageChange {
+  margin-top: 30px;
+  text-align: center;
+}
+.pageChange a {
+  padding: 6px;
+  margin: 0 4px;
+  background-color: rgba(204, 204, 204, 0.4);
+}
+.pageChange a:hover {
+  color: priceButtonColor;
+}
+@keyframes blockDisplay {
+  0% {
+    opacity: 0;
+    left: -40px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+.blockDisplay {
+  animation: blockDisplay 0.6s linear 0s 1 none;
+}
+.sellerInfor {
+  position: absolute;
+  top: -22px;
+  left: -250px;
+}
