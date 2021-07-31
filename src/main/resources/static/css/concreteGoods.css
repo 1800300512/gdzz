@@ -1,0 +1,289 @@
+main {
+  width: 1000px;
+  margin: 30px auto;
+}
+.imgShow img {
+  width: 200px;
+}
+.imgBg {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.7);
+  z-index: 5;
+}
+.imgLarger {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+}
+.imgLarger span {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #ffffff;
+  background-color: rgba(153, 153, 153, 0.6);
+  transform: translateY(-50%);
+}
+.imgLarger span:first-child {
+  left: -80px;
+}
+.imgLarger span:last-child {
+  right: -80px;
+}
+.imgLarger span:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.imgLarger img {
+  height: 100%;
+  z-index: 6;
+}
+.topInformation {
+  display: inline-block;
+  width: 1000px;
+  padding: 7px 0px;
+  border: 1px solid rgba(102, 102, 102, 0.6);
+  border-top: 2px solid #000000;
+}
+.topInformation p {
+  margin: 0px;
+}
+.topInformation > div {
+  float: left;
+  border-right: 1px solid rgba(102, 102, 102, 0.6);
+}
+.sellerInformation {
+  width: 200px;
+  padding-left: 5px;
+}
+.sellerInformation > img {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+.surfTimes,
+.preEdit {
+  width: 112px;
+  text-align: center;
+}
+.goodsInformation > div {
+  float: left;
+}
+.leftInfo {
+  width: 62%;
+}
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  text-align: center;
+  background-image: url(../img/imgBg.jpg);
+}
+.imgContainer > img {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 90%;
+  max-height: 100%;
+  cursor: pointer;
+}
+.imgContainer .moveBlock {
+  display: none;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(102, 102, 102, 0.3);
+  cursor: pointer;
+}
+.imgContainer > .videoShow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  display: none;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+.imgContainer > .icon-play-circle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.videoShow video {
+  width: 100%;
+}
+.videoShow .control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  font-size: 80px;
+  color: #ffffff;
+  z-index: 4;
+}
+.videoShow .icon-cancel {
+  font-size: 40px;
+  color: #ffffff;
+  z-index: 4;
+}
+.videoShow:hover .control {
+  display: inline-block;
+}
+.moveImg {
+  display: none;
+  position: absolute;
+  left: 100%;
+  height: 440px;
+  width: 440px;
+  z-index: 3;
+  overflow: hidden;
+}
+.moveImg img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.preventCheat {
+  font-size: 12px;
+}
+.preventCheat > span {
+  color: #ff9900;
+}
+.imgShow {
+  float: left;
+  margin: 15px 0px;
+  height: 140px;
+  width: 100%;
+  text-align: center;
+  line-height: 140px;
+}
+.imgShow > img {
+  margin: 0px 5px;
+  width: 110px;
+  max-height: 140px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.introduceTitle {
+  border-bottom: 5px solid #ff7300;
+}
+.introduceTitle > span {
+  padding: 6px 6px;
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #ff7300;
+  transform: translateY(-3px);
+}
+.rightInfo {
+  margin-left: 2%;
+  width: 34%;
+}
+.rightInfo button {
+  width: 40%;
+  height: 40px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #ff7300;
+  cursor: pointer;
+}
+.rightInfo button:hover {
+  filter: brightness(110%);
+}
+.goodsPrice {
+  font-weight: bold;
+  font-size: 20px;
+  color: #ff0000;
+}
+.goodsPrice::before {
+  content: "￥";
+}
+.isBargin {
+  float: right;
+}
+.otherGoods {
+  position: relative;
+  width: 90%;
+  height: 337px;
+  border: 1px solid rgba(102, 102, 102, 0.7);
+  overflow: hidden;
+}
+.otherGoods h3 {
+  text-indent: 10px;
+}
+.others {
+  height: 276px;
+  overflow-y: auto;
+}
+.otherShow {
+  height: 62px;
+  padding: 3px;
+  border-bottom: 1px solid #666666;
+}
+.otherShow a {
+  display: inline-block;
+  height: 62px;
+}
+.otherShow img {
+  margin-left: 5%;
+  width: 40%;
+  height: 90%;
+}
+.otherShow * {
+  float: left;
+}
+.otherShow p {
+  width: 154px;
+  margin: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.contact {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px #666666;
+}
+.contactInput {
+  position: relative;
+  width: 280px;
+  border: 1px solid #666666;
+  border-radius: 20px;
+  margin: 10px auto 0px auto;
+  overflow: hidden;
+}
+.contactInput input {
+  text-indent: 10px;
+  font-size: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+.contactInput .errorTip {
+  font-size: 14px;
+  text-indent: 12px;
+}

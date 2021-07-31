@@ -7,10 +7,11 @@ spring:
     password: gdlq11
     url: jdbc:mysql://112.74.59.110:3306/gdzz?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 
-  # thymeleaf
+    # thymeleaf
     thymeleaf:
-    # 关闭缓存
-        cache: false
+      # 关闭缓存
+      cache: false
+
 
 mybatis:
   type-aliases-package: cn.edu.guet.bean
@@ -19,4 +20,5 @@ mybatis:
 #showSql
 logging:
   level:
-    com.example.bootdemo.mapper: DEBUG
+    cn.edu.guet: DEBUG
+

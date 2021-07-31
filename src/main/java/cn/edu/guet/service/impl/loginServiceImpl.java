@@ -32,6 +32,7 @@ public class loginServiceImpl implements loginService {
     public Users login(String acount, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         Users users=loginMapper.login(acount);
         session.setAttribute("s1", users);
+        session.setAttribute("userid",users.getUserid());
         // 保存cookie，实现自动登录
         Cookie cookies = new Cookie("cookies", users.getPhone());
         // 设置cookie的持久化时间，30天

@@ -44,7 +44,6 @@ public class loginController {
     public Map<String,Boolean> check(String phone)
     {
         Users user=loginService.check(phone);
-        System.out.println(user);
         Map<String , Boolean> map=new HashMap<String, Boolean>();
         if(user!=null){
             map.put("YON",true);
@@ -76,7 +75,6 @@ public class loginController {
     @PostMapping("register")
     public Map<String,Boolean> register(String phone,String password){
         String uuid= UUID.randomUUID().toString().replaceAll("-","");
-        System.out.println(uuid);
         Map<String , Boolean> map=new HashMap<String, Boolean>();
         Boolean f=loginService.register(uuid, phone, password);
         map.put("YON",f);

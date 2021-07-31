@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.mapper.seekMapper">
+  <insert id="insertseek" parameterType="cn.edu.guet.bean.seek">
+      insert into quest values(#{id},#{name},#{num},#{price},#{describe},#{state},#{s_id},#{classify},#{c_time},#{picpath},#{s_name})
+  </insert>
+    <select id="selectseek" parameterType="int" resultMap="seek1">
+            select q.*,u.*
+            from quest q, user u
+            where q.s_id=u.userid
+            limit #{curPage},5
+    </select>
+    <resultMap id="seek1" type="cn.edu.guet.bean.seek">
+                <result property="id" column="id"/>
+                <result property="name" column="name"/>
+                <result property="num" column="num"/>
+                <result property="price" column="price"/>
+                <result property="describe" column="describe"/>
+                <result property="state" column="state"/>
+                <result property="s_id" column="s_id"/>
+                <result property="classify" column="classify"/>
+                <result property="c_time" column="c_time"/>
+                <result property="picpath" column="picpath"/>
+                <result property="s_name" column="s_name"/>
+                <association property="users" javaType="cn.edu.guet.bean.Users">
+                    <result property="username" column="username"/>
+                    <result property="phone" column="phone"/>
+                    <result property="realname" column="realname"/>
+                    <result property="h_portrait" column="h_portrait"/>
+                    <result property="userid" column="userid"/>
+                    <result property="roleid" column="roleid"/>
+                </association>
+    </resultMap>
+<!--    <select id="selectseek" parameterType="int" resultMap="seek2">-->
+<!--        select q.id qid,q.name qname,q.num qnum,q.price qprice ,q.describe qdescribe, q.state qstate,q.s_id qs_id,-->
+<!--        q.classify qclassify,q.c_time qc_time,q.picpath qpic,q.s_name qs_name,-->
+<!--        u.username uname,u.phone uphone,u.realname urealname,u.h_portrait uh,u.userid uid-->
+<!--        from quest q, user u-->
+<!--        where q.s_id=u.userid-->
+<!--        limit #{curPage},5-->
+<!--    </select>-->
+<!--    <resultMap id="seek2" type="cn.edu.guet.bean.seek">-->
+<!--        <result property="id" column="qid"/>-->
+<!--        <result property="name" column="qname"/>-->
+<!--        <result property="num" column="qnum"/>-->
+<!--        <result property="price" column="qprice"/>-->
+<!--        <result property="describe" column="qdescribe"/>-->
+<!--        <result property="state" column="qstate"/>-->
+<!--        <result property="s_id" column="qs_id"/>-->
+<!--        <result property="classify" column="qclassify"/>-->
+<!--        <result property="c_time" column="qc_time"/>-->
+<!--        <result property="picpath" column="qpic"/>-->
+<!--        <result property="s_name" column="qs_name"/>-->
+<!--        <association property="users" javaType="cn.edu.guet.bean.Users">-->
+<!--            <result property="usename" column="uname"/>-->
+<!--            <result property="phone" column="uphone"/>-->
+<!--            <result property="realname" column="urealname"/>-->
+<!--            <result property="h_portrait" column="uh"/>-->
+<!--            <result property="userid" column="uid"/>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+</mapper>

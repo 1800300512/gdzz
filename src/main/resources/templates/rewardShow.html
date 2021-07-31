@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>蚂蚁置物-单个商品</title>
+    <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
+    <link th:href="@{/css/whole.css}" type="text/css" th:rel="stylesheet">
+    <link th:href=" @{/css/style.css}" type="text/css" th:rel="stylesheet">
+    <link th:href="@{/css/head.css}" type="text/css" th:rel="stylesheet">
+    <link th:href="@{/css/loginRegister.css}" type="text/css" th:rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/slider.css}" th:rel="stylesheet">
+    <link th:href="@{/css/concreteGoods.css}" type="text/css" th:rel="stylesheet">
+</head>
+
+<body>
+    <!-- 顶部搜索框 -->
+    <div class="topBg"></div>
+    <div class="alignCenter head">
+        <div class="headLeft">
+            <div class="logoImg">
+                <span></span>
+                <img src="img/logoFont.png">
+                <img src="img/logoBg.jpg" class="hideImg">
+                <span></span>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+                <li>
+                    <a href="goods.html?page=0&ways=0&classify=全部">出售</a>
+                </li>
+                <li>
+                    <a href="goods.html?page=0&ways=1&classify=全部">求售</a>
+                </li>
+                <li>
+                    <a href="goods.html?page=0&ways=2&classify=全部">赠送</a>
+                </li>
+                <li>
+                    <a href="goods.html?page=0&ways=3&classify=全部">租赁</a>
+                </li>
+            </ul>
+            <div class="search">
+                <div class="claChoose">
+                    <span>分类</span>
+                    <ul>
+                        <li>待售</li>
+                        <li>求卖</li>
+                        <li>赠送</li>
+                        <li>租赁</li>
+                        <li>代购</li>
+                    </ul>
+                </div>
+                <div class="searchFor">
+                    <input type="text">
+                    <span class="icon-search"></span>
+                </div>
+                <ul>
+                    <li>12</li>
+                    <li>2</li>
+                    <li>4</li>
+                </ul>
+                <span class="error">请先选择分类</span>
+            </div>
+        </div>
+        <div class="showContaniner">
+            <span>登录</span>
+            <span>注册</span>
+            <div class="showInformation">
+                <div class="showInformationTop">
+                    <img src="">
+                    <span class="userName">name</span>
+                </div>
+                <div class="function">
+                    <a href="myGoods.html?nav=1">发布闲置</a>
+                    <a href="myGoods.html?nav=2">发布寻求</a>
+                    <a href="myGoods.html?nav=3">我的闲置</a>
+                    <a href="myGoods.html?nav=4">我的寻求</a>
+                </div>
+                <p class='outLogon'>注销</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main>
+        <div class="topInformation">
+            <div class="sellerInformation">
+                <img th:src="@{'/image/'+${seek1.users.getH_portrait()}}">
+                <span th:text="${seek1.getS_name()}"></span>
+            </div>
+            <!--<div class="surfTimes">
+                <p>闲置浏览次数</p>
+                <p class="times">times</p>
+            </div>
+            <div class="preEdit">
+                <p>最近编辑</p>
+                <p class="editTime">time</p>
+            </div>-->
+        </div>
+
+        <div class="goodsInformation">
+            <div class="leftInfo">
+                <div class="imgContainer">
+                    <img th:src="@{'/image/'+${seek1.getPicpath()}}">
+<!--                    <span class="icon-play-circle"></span>-->
+                    <div class="moveBlock"></div>
+                    <div class="moveImg">
+                        <img th:src="@{'/image/'+${seek1.getPicpath()}}">
+                    </div>
+                </div>
+                <div class="imgShow">
+                </div>
+                <p class="introduceTitle">
+                    <span>闲置介绍</span>
+                </p>
+                <p class="preventCheat">如遇到以下情况可能是诈骗行为：<span>1.宝贝价格异常低；2.卖家要求QQ沟通；3.卖家要求直接汇款。</span></p>
+                <p class="goodsIntroduce" th:text="${seek1.getDescribe()}"></p>
+            </div>
+
+            <div class="rightInfo">
+                <h2 class="goodsName" th:text="${seek1.getName()}"></h2>
+                <p>专卖价：
+                    <span class="goodsPrice" th:text="${seek1.getPrice()}"></span>
+                    <span class="isBargin">该商品拒绝讲价</span>
+                </p>
+                <hr>
+                <p class="sellerWechat">微信：<span>该用户已隐藏，请联系卖家获取联系方式</span></p>
+                <p class="sellerQQ">Q&nbsp;Q：<span>该用户已隐藏，请联系卖家获取联系方式</span></p>
+                <p>
+                    <button class="linkSeller">联系卖家</button>
+                </p>
+                <div class="otherGoods">
+                    <h3>卖家的其他闲置<span class="goodsNum"></span></h3>
+                    <div class="others">
+                        <div class="otherShow" style="border: 0px">
+                            <a th:href="@{'rewardShow?id='+${seek2.getId()}}">
+                                <img th:src="@{'/image/'+${seek2.getPicpath()}}">
+                                <p class="otherName" th:text="${seek2.getName()}"></p>
+                                <br>
+                                <p><span class="goodsPrice" th:text="${seek2.getPrice()}"></span></p>
+                            </a>
+                        </div>
+                        <div class="otherShow" style="border: 0px;margin-top: 50px ">
+                            <a th:href="@{'rewardShow?id='+${seek3.getId()}}">
+                                <img th:src="@{'/image/'+${seek3.getPicpath()}}">
+                                <p class="otherName" th:text="${seek3.getName()}"></p>
+                                <br>
+                                <p><span class="goodsPrice" th:text="${seek3.getPrice()}"></span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <div class="imgBg">
+        <div class="imgLarger">
+            <span><</span>
+            <img src="img/12.jpg">
+            <span>></span>
+        </div>
+    </div>
+
+
+
+    <!-- 登录注册块 -->
+    <div class="container">
+        <form class="login">
+            <span class="icon icon-cancel"></span>
+            <h1>欢迎登录</h1>
+            <p class="turnTo">
+                <span class="turnStu">学号登录</span>
+                <span class="turn">前往注册</span>
+            </p>
+            <div class="textInput">
+                <span class="iconLeft icon-mobile"></span>
+                <input type="text" maxlength="11" placeholder="请输入手机号码" class="mobileText">
+            </div>
+            <p class="errorTip mobileTip"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-lock"></span>
+                <input type="password" minlength="6" maxlength="16" placeholder="6到16位密码，区分大小写" class="passwordText">
+                <span class="icon icon-eye"></span>
+            </div>
+            <p class="errorTip passwordTip"></p>
+            <p class="autoLogin">
+                <input type="checkbox" checked="checked"><label class="tip">7天内记住密码</label>
+                <span class="forgetPassword">忘记密码？</span>
+            </p>
+            <div class="btn">
+                <input type="submit" value="登录">
+            </div>
+            <p class="otherWays">
+                <span>其他方式登录</span>
+                <span class="icon icon-wechat"></span>
+                <span class="icon icon-qq"></span>
+                <span class="icon icon-sina-weibo"></span>
+            </p>
+            <div class="gdufLogo">
+                <span></span>
+                <img src="img/GDUF.png" alt="" class="turnImg">
+            </div>
+        </form>
+        <form class="registered">
+            <span class="icon icon-cancel"></span>
+            <h1>欢迎注册</h1>
+            <p class="turnTo">
+                <span class="turnStu">学号登录</span>
+                <span class="turn">手机登录</span>
+            </p>
+            <div class="textInput">
+                <span class="iconLeft icon-mobile"></span>
+                <input type="text" maxlength="11" placeholder="请输入手机号码" class="mobileText">
+            </div>
+            <p class="errorTip mobileTip"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-keyboard"></span>
+                <input type="text" maxlength="4" placeholder="请输入验证码">
+                <img id="vcodeImg" src="CpachaServlet?method=loginCapcha">
+            </div>
+            <p class="errorTip"></p>
+            <label class="tip">
+                    <input type="checkbox">同意<a href="protocol.html" target="_blank">《蚂蚁置物网站协议》</a>
+                </label>
+            <p class="errorTip"></p>
+            <div class="btn">
+                <input type="submit" value="注册">
+            </div>
+            <p class="otherWays">
+                <span>其他方式登录</span>
+                <span class="icon icon-wechat"></span>
+                <span class="icon icon-qq"></span>
+                <span class="icon icon-sina-weibo"></span>
+            </p>
+            <div class="gdufLogo">
+                <span></span>
+                <img src="img/GDUF.png" alt="" class="turnImg">
+            </div>
+        </form>
+        <form class="sureRegister">
+            <span class="icon icon-cancel"></span>
+            <h1>欢迎注册</h1>
+            <div class="textInput">
+                <span class="iconLeft icon-keyboard"></span>
+                <input type="text" maxlength="4" placeholder="请输入手机验证码">
+                <p class="mobileCode">
+                    <button class="getCode">获取手机验证码</button>
+                </p>
+            </div>
+            <p class="errorTip"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-lock"></span>
+                <input type="password" minlength="6" maxlength="16" placeholder="6到16位密码，区分大小写" class="passwordText">
+                <span class="icon icon-eye"></span>
+            </div>
+            <p class="errorTip passwordTip"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-lock"></span>
+                <input type="password" minlength="6" maxlength="16" placeholder="请确认密码" class="passwordText">
+                <span class="icon icon-eye"></span>
+            </div>
+            <p class="errorTip passwordTip"></p>
+            <div class="btn">
+                <input type="submit" value="提交">
+            </div>
+            <p class="tip turn">返回修改手机号码</p>
+            <div class="gdufLogo">
+                <span></span>
+                <img src="img/GDUF.png" alt="" class="turnImg">
+            </div>
+        </form>
+        <form class='changePassword'>
+            <span class="icon icon-cancel"></span>
+            <h1>忘记密码</h1>
+            <span class='gotoLogin'>前往登录</span>
+            <div class="textInput">
+                <span class="iconLeft icon-mobile"></span>
+                <input type="text" maxlength="11" placeholder="请输入手机号码" class="mobileText">
+            </div>
+            <p class="errorTip mobileTip"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-keyboard"></span>
+                <input type="text" maxlength="4" placeholder="请输入手机验证码">
+                <p class="mobileCode">
+                    <button class="getCode">获取手机验证码</button>
+                </p>
+            </div>
+            <div class="textInput">
+                <span class="iconLeft icon-lock"></span>
+                <input type="password" minlength="6" maxlength="16" placeholder="6到16位密码，区分大小写" class="passwordText">
+                <span class="icon icon-eye"></span>
+            </div>
+            <p class="errorTip passwordTip"></p>
+            <div class="btn">
+                <input type="submit" value="修改">
+            </div>
+            <div class="gdufLogo">
+                <span></span>
+                <img src="img/GDUF.png" alt="" class="turnImg">
+            </div>
+        </form>
+        <!-- 学号登录 -->
+        <form class="studentLogin">
+            <span class="icon icon-cancel"></span>
+            <h1>欢迎登录</h1>
+            <p class="turnTo">
+                <span class="turnLogin">手机登录</span>
+                <span class="turnRegistered">前往注册</span>
+            </p>
+            <div class="textInput">
+                <span class="iconLeft icon-user"></span>
+                <input type="text" maxlength="9" placeholder="请输入学号" class="">
+            </div>
+            <p class="errorTip studnetError"></p>
+            <div class="textInput">
+                <span class="iconLeft icon-lock"></span>
+                <input type="password" minlength="6" maxlength="16" placeholder="请输入密码" class="passwordText">
+                <span class="icon icon-eye"></span>
+            </div>
+            <p class="errorTip passwordTip"></p>
+            <p class="autoLogin">
+                <input type="checkbox" checked="checked"><label class="tip">7天内记住密码</label>
+            </p>
+            <div class="btn">
+                <input type="submit" value="登录">
+            </div>
+            <p class="otherWays">
+                <span>其他方式登录</span>
+                <span class="icon icon-wechat"></span>
+                <span class="icon icon-qq"></span>
+                <span class="icon icon-sina-weibo"></span>
+            </p>
+            <div class="gdufLogo">
+                <span></span>
+                <img src="img/GDUF.png" alt="" class="turnImg">
+            </div>
+        </form>
+    </div>
+    <div class="coverBg"></div>
+    <!-- 页脚 -->
+    <footer>
+        <p>
+            <span>蚂蚁置物，请放心我的服务</span>
+            <span class="icon-qq footIcon"></span>
+            <span class="icon-wechat footIcon"></span>
+            <span class="icon-sina-weibo footIcon"></span>
+            <span>欢迎拨打：130-6060-7112</span>
+        </p>
+        <p>
+            <span class="icon-copyright">广东金融学院java部落</span>
+            <span>你说的都队</span>
+            <span>版权所有</span>
+        </p>
+    </footer>
+    <!-- 随页面滚动滑块 -->
+    <div class="slider">
+        <a class="icon-user-circle slideIcon" href="myGoods.html?nav=0">
+            <span>用户资料</span>
+        </a>
+        <a href="newChat.html" class="icon-chat-bubble-dots slideIcon" target="_blank">
+            <span>聊天空间</span>
+        </a>
+        <a href="collect.html" class="icon-shopping-cart slideIcon">
+            <span>已购闲置</span>
+        </a>
+        <a class="icon-edit-3 slideIcon" href="Feedback.html" target="_blank">
+            <span>反馈</span>
+        </a>
+    </div>
+
+
+    <!-- 联系信息块 -->
+    <div class="contact">
+        <span class="icon icon-cancel"></span>
+        <h2>联系卖家</h2>
+        <p>请选择填写下列联系方式</p>
+        <div class="contactInput">
+            <input type="text" placeholder="请输入微信号">
+        </div>
+        <div class="contactInput">
+            <input type="text" placeholder="请输入QQ号码">
+        </div>
+        <div class="contactInput">
+            <input type="text" placeholder="请输入手机号码">
+        </div>
+        <p class="errorTip"></p>
+        <div class="btn">
+            <input type="submit" value="联系卖家">
+        </div>
+    </div>
+
+<!--    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>-->
+<!--    <script src="js/whole.js" type="text/javascript"></script>-->
+<!--    <script src="js/loginRegister.js" type="text/javascript"></script>-->
+<!--    <script src="js/concreteGoods.js" type="text/javascript"></script>-->
+</body>
+
+</html>

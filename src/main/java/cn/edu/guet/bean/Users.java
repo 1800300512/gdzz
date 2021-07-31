@@ -1,10 +1,21 @@
 package cn.edu.guet.bean;
 public class Users {
     private String userid;
-    private String usename;
+    private String username;
     private String userpassword;
     private String realname;
     private String phone;
+    private String h_portrait;
+    private int roleid;
+    public String getH_portrait() {
+        return h_portrait;
+    }
+
+    public void setH_portrait(String h_portrait) {
+        this.h_portrait = h_portrait;
+    }
+
+
 
     public String getUserid() {
         return userid;
@@ -14,21 +25,22 @@ public class Users {
         this.userid = userid;
     }
 
-    public Users(String userid, String usename, String userpassword, String realname, String phone, int roleid) {
+    public Users(String userid, String usename, String userpassword, String realname, String phone, int roleid,String h_portrait) {
         this.userid = userid;
-        this.usename = usename;
+        this.username = usename;
         this.userpassword = userpassword;
         this.realname = realname;
         this.phone = phone;
         this.roleid = roleid;
+        this.h_portrait=h_portrait;
     }
 
-    public String getUsename() {
-        return usename;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsename(String usename) {
-        this.usename = usename;
+    public void setUsername(String usename) {
+        this.username = usename;
     }
 
     public String getUserpassword() {
@@ -63,5 +75,5 @@ public class Users {
         this.roleid = roleid;
     }
 
-    private int roleid;
+
 }
