@@ -1,8 +1,8 @@
 window.onload=function () {
-    var a = document.getElementsByTagName("a")[0];
+    var a = document.getElementsByClassName("a10086");
     var mask = document.getElementById("mask");
     var q1 = document.getElementById("q1");
-    a.onclick = function(event){
+    $(".a10086").click(function (event) {
         mask.style.display = "block";
         //阻止冒泡
         event = event || window.event;
@@ -11,7 +11,7 @@ window.onload=function () {
         }else{
             event.cancelBubble = true;
         }
-    }
+    })
     q1.onclick=function(event){
         event = event || window.event;
         if (event || event.stopPropagation()){
@@ -44,12 +44,12 @@ window.onload=function () {
                 $.ajax({
                     type:"post",
                     url:"release",
-                    dataType:"json",
+                    // dataType:"json",
                     contentType:false,
                     processData:false,
                     data: formData,
                     success:function (data) {
-
+                        mask.style.display = "none";
                     }
 
                 })

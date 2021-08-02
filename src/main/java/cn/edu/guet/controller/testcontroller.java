@@ -30,11 +30,6 @@ public class testcontroller {
     public String toreward(){
         return "reward";
     }
-    @RequestMapping("test")
-    public String totest(){
-        return "test";
-    }
-
 
     @PostMapping("release")
     public String release(String name, String num, String classify, String describe,String price, HttpServletRequest request,MultipartFile pic){
@@ -79,7 +74,7 @@ public class testcontroller {
         seek.setS_name(users.getUsername());
         seek.setUsers(users);
         seekService.insertseek(seek);
-        return "test";
+        return "reward";
     }
     @RequestMapping("quest")
     public String quest(Model model,String curPage,HttpSession session){
@@ -89,12 +84,28 @@ public class testcontroller {
         int i=Integer.parseInt(curPage);
         model.addAttribute("Page",i);
         List<seek> seek=seekService.selectseek(Integer.parseInt(curPage)*5);
-        System.out.println(seek);
         session.setAttribute("seekl",seek);
         model.addAttribute("seek",seek);
-        System.out.println(seek.get(0).getUsers());
         return "reward";
     }
+
+
+    @RequestMapping("searchname")
+    public String searchname(Model model,String curPage,HttpSession session,String name){
+        if (curPage==null||Integer.parseInt(curPage)<0){
+            curPage="0";
+        }
+
+        int i=Integer.parseInt(curPage);
+        model.addAttribute("Page",i);
+        name='%'+name+'%';
+        List<seek> seek=seekService.searchname(Integer.parseInt(curPage)*5,name);
+        session.setAttribute("seekl",seek);
+        model.addAttribute("seek",seek);
+        return "reward";
+    }
+
+
     @RequestMapping("rewardShow")
     public String rewardShow(String id,HttpServletRequest request,Model model ){
         HttpSession session = request.getSession();

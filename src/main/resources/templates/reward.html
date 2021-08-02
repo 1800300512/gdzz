@@ -5,13 +5,16 @@
     <meta charset="utf-8"/>
     <title>蚂蚁置物-商品列表</title>
     <script src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js"></script>
-    <script th:src="@{/js/reware.js}"></script>
+
     <link th:href="@{/css/whole.css}" type="text/css" th:rel="stylesheet">
     <link th:href=" @{/css/style.css}" type="text/css" th:rel="stylesheet">
     <link th:href="@{/css/head.css}" type="text/css" th:rel="stylesheet">
     <link th:href="@{/css/loginRegister.css}" type="text/css" th:rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/slider.css}" th:rel="stylesheet">
     <link th:href="@{/css/goods.css}" type="text/css" th:rel="stylesheet">
+    <script th:src="@{/js/reware.js}"></script>
+    <link th:href="@{/css/re.css}" rel="stylesheet"/>
+    <script th:src="@{/js/rq.js}" type="text/javascript"></script>
 </head>
 
 <body>
@@ -86,22 +89,13 @@
 <main>
     <div class="goodsClassify">
         <p class="currentNav">
-            <a href="goods.html?page=0&ways=0&classify=全部">全部</a>
-        <hr>
+            <h1>寻求列表</h1>
         </p>
         <p class="priceSelect">
-            <span>价格区间</span>
-            <input type="text" size="5">~
-            <input type="text" size="5">
-            <button class="priceSearch">查找</button>
-            <span class="upPrice">价格升序排序</span>
-            <span class="downPrice">价格降序排序</span>
-            <a title="切换到水平排序">
-                <button class="icon-view-tile"></button>
-            </a>
-            <a title="切换到垂直排序">
-                <button class="icon-arrest"></button>
-            </a>
+            <span>商品名字：</span>
+            <input type="text" size="10" class="searchname">
+            <button class="priceSearch" style="background-color: #00b7ee">查找</button>
+            <button class="a10086" style="background-color: #00b7ee">发布寻求</button>
         </p>
 
     </div>
@@ -165,5 +159,27 @@
     </a>
 </div>
 <input type="hidden" th:value="${Page}" id="page"/>
+<div class="mask" id="mask">
+    <div class="q1" id="q1">
+        <div class="q2" id="q2">
+            <h1>发布寻求</h1>
+            <label>名字:</label><input type="text" name="name"><p class="np1"></p><br/>
+            <label>数量:</label><input type="text" name="num"><p class="np2"></p><br/>
+            <label>价格:</label><input type="text" name="price"><p></p><br/>
+            <label>图片:</label><input type="file" name="pic"><p></p><br/>
+            <label>分类：</label>
+            <input type="radio" value="科技"name="classify">科技
+            <input type="radio" value="书籍"name="classify">书籍
+            <input type="radio" value="电子"name="classify">电子<br/>
+            <input type="radio" value="日常"name="classify">日常
+            <input type="radio" value="衣服" name="classify">衣服
+            <p></p>
+            <br/>
+            <label>描述:</label><br/>
+            <textarea class="textarea"></textarea><br/>
+            <button class="tj">提交</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

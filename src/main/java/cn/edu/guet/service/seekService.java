@@ -7,4 +7,5 @@ import java.util.List;
 public interface seekService {
     void insertseek(seek seek);
     List<seek> selectseek(int curPage);
+    List<seek> searchname(int curpage,String name);
 }

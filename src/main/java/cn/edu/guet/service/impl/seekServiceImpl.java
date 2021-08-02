@@ -21,4 +21,9 @@ public class seekServiceImpl implements seekService {
     public List<seek> selectseek(int curPage) {
         return seekMapper.selectseek(curPage);
     }
+
+    @Override
+    public List<seek> searchname(int curpage, String name) {
+        return seekMapper.searchname(curpage,name);
+    }
 }

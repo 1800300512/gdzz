@@ -190,8 +190,9 @@ button {
 .pageChange button {
   padding: 6px;
   margin: 0 4px;
-  background-color: rgba(204, 204, 204, 0.4);
-  display:inline-block;
+  background-color: rgba(93, 126, 255, 0.82);
+  display: inline;
+  width: 50px;
 }
 .pageChange button:hover {
   color: priceButtonColor;
@@ -235,4 +236,16 @@ button {
   padding: 0px;
   width: 0px;
   height: 0px;
+}
+.priceSearch{
+  width: 50px;
+}
+.a10086{
+  width: 100px;
+}
+.nextPage{
+
+}
+.prePage{
+
 }

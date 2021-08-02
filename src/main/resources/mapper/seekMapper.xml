@@ -10,6 +10,13 @@
             where q.s_id=u.userid
             limit #{curPage},5
     </select>
+    <select id="searchname" resultMap="seek1">
+            select q.*,u.*
+            from quest q, user u
+            where q.s_id=u.userid and name like #{name}
+            limit #{curpage},5
+    </select>
+
     <resultMap id="seek1" type="cn.edu.guet.bean.seek">
                 <result property="id" column="id"/>
                 <result property="name" column="name"/>

@@ -42,7 +42,7 @@ $(document).ready(function(){
             },
             success: function (data) {
                if (data.YON) {
-                  window.location.href = "test";
+                  window.location.href = "quest";
                } else {
                   $(".sp").replaceWith("<p class='sp' style='color: #ff2d3b'>用户或密码错误</p>");
                   // $(".sp").css("color","#c12119");
